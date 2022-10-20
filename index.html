@@ -50,8 +50,7 @@
         let inputArr = [1, 22, 100, 50, 51];
         // Отображение содержимого исходного массива
         console.log("Input array = [" + inputArr + "]");
-        let sourceArray = document.getElementById("sourceArray");
-        sourceArray.innerText = "["+ inputArr + "]";
+        document.getElementById("sourceArray").innerText = "["+ inputArr + "]";
         // Отфильтровываем необходимые значения (больше 50)
         let filteredArr = inputArr.filter(item =>  item > 50);
         // Более длинный вариант фильтрования элементов массива
@@ -61,20 +60,17 @@
         // Отображаем отфильтрованные значения 
         console.log("Filtered values = [" + filteredArr + "]");
         // и на веб-странице
-        let filteredValues = document.getElementById("filteredValues");
-        filteredValues.innerText = "["+ filteredArr + "]";
+        document.getElementById("filteredValues").innerText = "["+ filteredArr + "]";
         // Отображаем количество отфильтрованных значений 
         console.log("Amount of filtered values = " + filteredArr.length);
         // и на веб-странице
-        let amount = document.getElementById("amount");
-        amount.innerText = filteredArr.length;
+        let amount = document.getElementById("amount").innerText = filteredArr.length;
         // Суммируем отфильтрованные значения с помощью функции reduce и стрелочной функции (лямбда-метода)
         let result = filteredArr.reduce((sum, current) => sum + current, 0);
         // Отображаем сумму отфильтрованных элементов в консоль
         console.log("Sum of elements = " + result);
         // и на веб-странице
-        let sum = document.getElementById("sum");
-        sum.innerText = result;
+        document.getElementById("sum").innerText = result;
     </script>
 </body>
 </html>
