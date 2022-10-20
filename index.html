@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            padding: 5px;
+        }
+        #sourceArray,
+        #conditions,
+        #filteredValues,
+        #amount,
+        #sum {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Info</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Исходный массив:</td>
+            <td id = "sourceArray"></td>
+        </tr>
+        <tr>
+            <td>Условие фильтрации:</td>
+            <td id="conditions">Значение > 50</td>
+        </tr>
+        <tr>
+            <td>Отфильтрованные значения:</td>
+            <td id = "filteredValues"></td>
+        </tr>
+        <tr>
+            <td>Количество отфильтрованных значений:</td>
+            <td id = "amount"></td>
+        </tr>
+        <tr>
+            <td>Сумма отфильтрованных значений:</td>
+            <td id = "sum"></td>
+        </tr>
+    </table>
+    <script>
+        // Исходный массив
+        let inputArr = [1, 22, 100, 50, 51];
+        // Отображение содержимого исходного массива
+        console.log("Input array = [" + inputArr + "]");
+        let sourceArray = document.getElementById("sourceArray");
+        sourceArray.innerText = "["+ inputArr + "]";
+        // Отфильтровываем необходимые значения (больше 50)
+        let filteredArr = inputArr.filter(item =>  item > 50);
+        // Более длинный вариант фильтрования элементов массива
+        // let filteredArr = inputArr.filter(function(item) {
+        //     return item > 50;
+        // });
+        // Отображаем отфильтрованные значения 
+        console.log("Filtered values = [" + filteredArr + "]");
+        // и на веб-странице
+        let filteredValues = document.getElementById("filteredValues");
+        filteredValues.innerText = "["+ filteredArr + "]";
+        // Отображаем количество отфильтрованных значений 
+        console.log("Amount of filtered values = " + filteredArr.length);
+        // и на веб-странице
+        let amount = document.getElementById("amount");
+        amount.innerText = filteredArr.length;
+        // Суммируем отфильтрованные значения с помощью функции reduce и стрелочной функции (лямбда-метода)
+        let result = filteredArr.reduce((sum, current) => sum + current, 0);
+        // Отображаем сумму отфильтрованных элементов в консоль
+        console.log("Sum of elements = " + result);
+        // и на веб-странице
+        let sum = document.getElementById("sum");
+        sum.innerText = result;
+    </script>
+</body>
+</html>
